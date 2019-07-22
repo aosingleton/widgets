@@ -1,0 +1,15 @@
+{
+    "type": "metric",
+    "x": 0,
+    "y": 0,
+    "width": 6,
+    "height": 6,
+    "properties": {
+        "view": "timeSeries",
+        "stacked": false,
+        "metrics": [
+            [ "AWS/S3", "NumberOfObjects", "StorageType", "AllStorageTypes", "BucketName", "astempbucket07172019.1323", { "period": 86400 } ]
+        ],
+        "region": "us-east-1"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "type": "metric",
+    "x": 6,
+    "y": 0,
+    "width": 6,
+    "height": 6,
+    "properties": {
+        "view": "timeSeries",
+        "stacked": false,
+        "metrics": [
+            [ "CWAgent", "mem_used_percent", "InstanceId", "i-020a6fc208d2d1de7"]
+        ],
+        "region": "us-east-1"
+    }
+}
