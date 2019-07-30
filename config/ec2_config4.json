@@ -1,8 +1,10 @@
-with collect d
 {
 	"agent": {
-		"metrics_collection_interval": 60,
-		"run_as_user": "cwagent"
+		"metrics_collection_interval": 300,
+		"run_as_user": "cwagent",
+		"agent": "us-east-1",
+		"debug": true,
+		"omit_hostname": true
 	},
 	"metrics": {
 		"append_dimensions": {
@@ -12,39 +14,16 @@ with collect d
 			"InstanceType": "${aws:InstanceType}"
 		},
 		"metrics_collected": {
-			"collectd": {
-				"metrics_aggregation_interval": 60
-			},
 			"cpu": {
 				"measurement": [
 					"cpu_usage_idle",
 					"cpu_usage_iowait",
 					"cpu_usage_user",
                     "cpu_usage_system",
-                    "time_active", 
-                    "time_guest", 
-                    "time_guest_nice", 
-                    "time_idle", 
-                    "time_iowait", 
-                    "time_irq", 
-                    "time_nice", 
-                    "time_softirq", 
-                    "time_steal", 
-                    "time_system", 
-                    "time_user", 
-                    "usage_active", 
-                    "usage_guest", 
-                    "usage_guest_nice", 
-                    "usage_idle", 
-                    "usage_iowait", 
-                    "usage_irq", 
-                    "usage_nice", 
-                    "usage_softirq", 
-                    "usage_steal", 
-                    "usage_system", 
-                    "usage_user"
+                    "cpu_time_active", 
+                    "cpu_usage_system"
 				],
-				"metrics_collection_interval": 60,
+				"metrics_collection_interval": 300,
 				"resources": [
 					"*"
 				],
@@ -55,16 +34,7 @@ with collect d
 					"used_percent",
 					"inodes_free"
 				],
-				"metrics_collection_interval": 60,
-				"resources": [
-					"*"
-				]
-            },
-            "net": {
-                "measurement": [
-                    "net_err_out"
-                ],
-                "metrics_collection_interval": 60,
+				"metrics_collection_interval": 300,
 				"resources": [
 					"*"
 				]
@@ -84,22 +54,13 @@ with collect d
 			},
 			"mem": {
 				"measurement": [
+					"mem_used",
+					"mem_active",
+					"mem_available",
+					"mem_available_percent",
                     "mem_used_percent",
                     "mem_free",
-                    "mem_total",
-				],
-				"metrics_collection_interval": 60
-			},
-			"netstat": {
-				"measurement": [
-					"tcp_established",
-					"tcp_time_wait"
-				],
-				"metrics_collection_interval": 60
-			},
-			"swap": {
-				"measurement": [
-					"swap_used_percent"
+                    "mem_total"
 				],
 				"metrics_collection_interval": 60
 			}
